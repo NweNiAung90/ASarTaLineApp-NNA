@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/news_details_appbar_height"
+                app:contentScrim="@color/primary"
+                app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
+
+                <ImageView
+                    android:id="@+id/iv_pasta"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pasta" />
+
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin">
+
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white">
+
+                <LinearLayout
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <org.mmtextview.components.MMTextView
+                        android:id="@+id/tv_war_dee_name"
+                        style="@style/DetailsMargin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="White Sauce Pasta With Vegetable"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/text_heading_1x" />
+
+                    <TextView
+                        android:id="@+id/tv_price_tag"
+                        style="@style/DetailsMargin"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@color/primary_dark"
+                        android:paddingTop="@dimen/margin_medium_2"
+                        android:text="$269"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/text_regular" />
+
+                </LinearLayout>
+
+                <org.mmtextview.components.MMTextView
+                    android:id="@+id/tv_war_dee_description"
+                    style="@style/DetailsMargin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_header"
+                    android:lineSpacingMultiplier="1.4"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,Etiam id sem risus. "
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_regular" />
+
+                <EditText
+                    android:id="@+id/et_note"
+                    style="@style/DetailsMargin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_war_dee_description"
+                    android:text="Add a note (extra sauce, no onions, etc.)"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_regular" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_footer"
+                    style="@style/DetailsMargin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/et_note"
+                    android:orientation="horizontal"
+                    android:weightSum="8">
+
+                    <Button
+                        android:id="@+id/btn_plus"
+                        style="@style/FooterLayout"
+                        android:layout_weight="1"
+                        android:foreground="@drawable/ripple"
+                        android:paddingLeft="@dimen/margin_xlarge"
+                        android:text="+" />
+
+                    <TextView
+                        android:id="@+id/tv_count"
+                        style="@style/FooterLayout"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/margin_medium_3"
+                        android:paddingTop="19dp"
+                        android:text="2" />
+
+                    <Button
+                        android:id="@+id/btn_minus"
+                        style="@style/FooterLayout"
+                        android:layout_weight="1"
+                        android:foreground="@drawable/ripple"
+                        android:paddingRight="@dimen/margin_medium"
+                        android:text="-" />
+
+                    <Button
+                        android:id="@+id/tv_add_to_cart"
+                        style="@style/FooterLayout"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_weight="5"
+                        android:foreground="@drawable/ripple"
+                        android:text="ADD TO CART"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!--include
+        android:id="@id/vp_empty"
+        layout="@layout/view_pod_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" /-->
+</FrameLayout>
